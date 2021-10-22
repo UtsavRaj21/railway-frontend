@@ -48,19 +48,32 @@ function Booking() {
                 }
 
             }
+            if(!have){
+                for(let i = 0 ; i<12;i++){
+                    for(let j = 0;j<7;j++){
+                        if(seatReq-->0){
+                            seat.push((i*7)+j);
+                            res.push((i*7)+j);
+                        }
+                    }
+                }
+            }
             const data1 = await axios.post("/api/book/set", {
                number:bookSeat
             })
             const data2 = await axios.post("/api/book/add", {
                 arr:res
              })
+
             let seatAvailbale = await axios.get("/api/empty/");
-            console.log(seatAvailbale.data.message)
-            availableSeatNo(seatAvailbale.data.message);
+            console.log(seatAvailbale.data)
+            availableSeatNo(seatAvailbale.data);
             
             let arr =  await axios.get("/api/book/get");
-            console.log(arr.data.message)
-            bookedSeat(arr.data.message);
+            console.log(arr.data)
+            bookedSeat(arr.data);
+
+            alert(res + " ticket booked");
 
         }
         catch (err) {
@@ -71,13 +84,13 @@ function Booking() {
     useEffect(async () => {
         console.log("data")
         let data = await axios.get("/api/empty/");
-        console.log(data)
+        console.log(data.data)
         // let data = 10;
         let arr =  await axios.get("/api/book/get");
         // let arr = [1,2,3,4,5];
-        console.log(arr.data.message)
-        availableSeatNo(data.data.message);
-        bookedSeat(arr.data.message);
+        console.log(arr.data)
+        availableSeatNo(data.data);
+        bookedSeat(arr.data);
     },[])
 
     return (
