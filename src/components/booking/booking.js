@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './bookingStyle.css'
 import axios from 'axios';
+import Chair from '../chair/chair';
 
 function Booking() {
     const [bookSeat, noOfSeat] = useState(1);
@@ -75,6 +76,7 @@ function Booking() {
             bookedSeat(arr.data);
 
             alert(" ticket booked -> Seat Number is " + res);
+            window.location.reload(false);
 
         }
         catch (err) {
@@ -116,9 +118,7 @@ function Booking() {
                 <div className="submit">
                     <div className="submit-booking" onClick={handleBooking}>Book</div>
                 </div>
-                <div>
-                    
-                </div>
+                    <Chair />
             </div>
         </div>
     )
