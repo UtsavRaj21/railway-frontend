@@ -84,11 +84,11 @@ function Booking() {
 
     useEffect(async () => {
         console.log("data")
-        let data = await axios.get("https://railway--backend.herokuapp.com/api/empty");
+        let data = await axios.get("/api/empty");
         console.log(data)
         console.log(data.data)
         // let data = 10;
-        let arr =  await axios.get("https://railway--backend.herokuapp.com/api/book/get");
+        let arr =  await axios.get("/api/book/get");
         // let arr = [1,2,3,4,5];
         console.log(arr.data)
         availableSeatNo(data.data.user);
