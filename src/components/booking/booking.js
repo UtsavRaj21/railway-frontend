@@ -18,8 +18,8 @@ function Booking() {
             let res = [];
             let have = false;
             console.log(seatReq);
-            console.log(res);
-            console.log(seat);
+            // console.log(res);
+            // console.log(seat);
             for(let i = 0 ; i<12;i++){
                 haveSeat = 0;
                 for(let j = 0;j<7;j++){
