@@ -91,7 +91,7 @@ function Booking() {
         let arr =  await axios.get("/api/book/get");
         // let arr = [1,2,3,4,5];
         console.log(arr.data)
-        availableSeatNo(data.data);
+        availableSeatNo(data.data.user);
         bookedSeat(arr.data);
     },[])
 
