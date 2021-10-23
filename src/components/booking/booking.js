@@ -58,19 +58,19 @@ function Booking() {
                     }
                 }
             }
-            const data1 = await axios.post("/api/book/set", {
+            const data1 = await axios.post("https://railway--backend.herokuapp.com/api/book/set", {
                number:bookSeat
             })
-            const data2 = await axios.post("/api/book/add", {
+            const data2 = await axios.post("https://railway--backend.herokuapp.com/api/book/add", {
                 arr:res
              })
 
-            let seatAvailbale = await axios.get("/api/empty/");
+            let seatAvailbale = await axios.get("/https://railway--backend.herokuapp.comapi/empty/");
             
             console.log(seatAvailbale.data)
             availableSeatNo(seatAvailbale.data);
             
-            let arr =  await axios.get("/api/book/get");
+            let arr =  await axios.get("https://railway--backend.herokuapp.com/api/book/get");
             console.log(arr.data)
             bookedSeat(arr.data);
 
@@ -84,11 +84,11 @@ function Booking() {
 
     useEffect(async () => {
         console.log("data")
-        let data = await axios.get("/api/empty");
+        let data = await axios.get("https://railway--backend.herokuapp.com/api/empty");
         console.log(data)
         console.log(data.data)
         // let data = 10;
-        let arr =  await axios.get("/api/book/get");
+        let arr =  await axios.get("https://railway--backend.herokuapp.com/api/book/get");
         // let arr = [1,2,3,4,5];
         console.log(arr.data)
         availableSeatNo(data.data.user);
