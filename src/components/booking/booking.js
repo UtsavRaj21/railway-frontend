@@ -66,6 +66,7 @@ function Booking() {
              })
 
             let seatAvailbale = await axios.get("/api/empty/");
+            
             console.log(seatAvailbale.data)
             availableSeatNo(seatAvailbale.data);
             
@@ -73,7 +74,7 @@ function Booking() {
             console.log(arr.data)
             bookedSeat(arr.data);
 
-            alert(res + " ticket booked");
+            alert(" ticket booked -> Seat Number is " + res);
 
         }
         catch (err) {
@@ -84,6 +85,7 @@ function Booking() {
     useEffect(async () => {
         console.log("data")
         let data = await axios.get("/api/empty/");
+        console.log(data)
         console.log(data.data)
         // let data = 10;
         let arr =  await axios.get("/api/book/get");
