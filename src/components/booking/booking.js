@@ -84,7 +84,7 @@ function Booking() {
 
     useEffect(async () => {
         console.log("data")
-        let data = await axios.get("/api/empty");
+        let data = await axios.get("https://railway--backend.herokuapp.com/api/empty");
         console.log(data)
         console.log(data.data)
         // let data = 10;
