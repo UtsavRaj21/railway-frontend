@@ -52,7 +52,7 @@ function Booking() {
             if(!have){
                 for(let i = 0 ; i<12;i++){
                     for(let j = 0;j<7;j++){
-                        if(seatReq-->0){
+                        if(!seat.includes((i*7)+j) && seatReq-->0){
                             seat.push((i*7)+j);
                             res.push((i*7)+j);
                         }
