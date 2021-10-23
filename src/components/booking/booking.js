@@ -67,7 +67,7 @@ function Booking() {
 
             let seatAvailbale = await axios.get("/https://railway--backend.herokuapp.comapi/empty/");
             
-            console.log(seatAvailbale.data)
+            console.log(seatAvailbale.data.user)
             availableSeatNo(seatAvailbale.data);
             
             let arr =  await axios.get("https://railway--backend.herokuapp.com/api/book/get");
