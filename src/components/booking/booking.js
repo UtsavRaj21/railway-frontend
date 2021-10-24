@@ -83,6 +83,18 @@ function Booking() {
             console.log(err);
         }
     }
+    const handleReset = async () =>{
+        try {
+            let seatReset = await axios.post("https://railway--backend.herokuapp.com/api/empty/");
+            console.log(seatReset);
+            availableSeatNo(80);
+            bookedSeat([]);
+            window.location.reload(false);
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
 
     useEffect(async () => {
         console.log("data")
@@ -116,9 +128,10 @@ function Booking() {
                     </select>
                 </div>
                 <div className="submit">
-                    <div className="submit-booking" onClick={handleBooking}>Book</div>
+                     <div className="booking-btn" onClick={handleReset}>Reset</div>
+                     <div className="booking-btn" onClick={handleBooking}>Book</div>
                 </div>
-                    <Chair />
+                <Chair />
             </div>
         </div>
     )

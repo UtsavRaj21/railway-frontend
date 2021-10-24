@@ -37,23 +37,26 @@
 .submit{
     height: 7vh;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.submit-booking{
-    width: 10vw;
+.booking-btn{
+    width: 7vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
     display: flex;
     justify-content: center;
     align-items: center;
-     background-color: black;
-     color: white;
-     height: 5vh;
-     font-size:x-large;
+    background-color: black;
+    color: white;
+    height: 5vh;
+    font-size:x-large;
  
  }
  
- .submit-booking:hover{
+ .booking-btn:hover {
      cursor: pointer;
      transform: scale(1.1);
  }
