@@ -16,42 +16,51 @@ function Booking() {
             }
             let seatReq = bookSeat;
             let haveSeat = 0;
+            let abs = 12;
+            let start = 12;
             let res = [];
             let have = false;
             console.log(seatReq);
-            // console.log(res);
-            // console.log(seat);
+            
             for(let i = 0 ; i<12;i++){
                 haveSeat = 0;
-                for(let j = 0;j<7;j++){
-                    if(i == 11 && j==3){
+                for(let j = 1;j<=arr[i];j++){
+                    if(i == 11 && j==4){
                         break;
                     }
                     if(!seat.includes((i*7)+j)){
                         haveSeat++;
                     }
                 }
-                console.log(res);
-                if(haveSeat >= seatReq){
-                    for(let j = 0;j<7;j++){
-                        if(!seat.includes((i*7)+j)){
-                            if(seatReq-->0){
-                                seat.push((i*7)+j);
-                                res.push((i*7)+j);
-                            }
-                            
-                        }
+                if(seatReq < haveSeat){
+                    if(start == 12){
+                        start = i;
                     }
-                    have = true;
                 }
-                if(have){
-                    break;
+                if(seatReq==haveSeat){
+                    abs = i;
                 }
-
+                console.log(res);
             }
+            if(abs!=12 || start !=12){
+                if(abs == 12){
+                    abs = start
+                }
+                for(let j = 1;j<=7;j++){
+                    if(!seat.includes((abs*7)+j)){
+                        if(seatReq-->0){
+                            seat.push((abs*7)+j);
+                            res.push((abs*7)+j);
+                        }
+                        
+                    }
+                }
+                have = true;
+            }
+            
             if(!have){
                 for(let i = 0 ; i<12;i++){
-                    for(let j = 0;j<7;j++){
+                    for(let j = 1;j<=7;j++){
                         if(!seat.includes((i*7)+j) && seatReq-->0){
                             seat.push((i*7)+j);
                             res.push((i*7)+j);
