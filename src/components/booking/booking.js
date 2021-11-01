@@ -24,7 +24,7 @@ function Booking() {
             
             for(let i = 0 ; i<12;i++){
                 haveSeat = 0;
-                for(let j = 1;j<=arr[i];j++){
+                for(let j = 1;j<=7;j++){
                     if(i == 11 && j==4){
                         break;
                     }
